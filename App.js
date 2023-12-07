@@ -6,6 +6,7 @@ import {
   Button,
   StyleSheet,
   Picker,
+  Pressable,
 } from "react-native";
 
 const ColisaoSimulador = () => {
@@ -42,10 +43,7 @@ const ColisaoSimulador = () => {
     let m1 = massa1 / 9.8;
     let m2 = massa2 / 9.8;
 
-    let Pi =
-      sentido === "mesmo"
-        ? m1 * v1 - m2 * v2
-        : m1 * v1 + m2 * v2;
+    let Pi = sentido === "mesmo" ? m1 * v1 - m2 * v2 : m1 * v1 + m2 * v2;
 
     const forca = Pi / tempoC;
 
@@ -142,7 +140,9 @@ const ColisaoSimulador = () => {
         <Picker.Item label="Corpo 2" value="corpo2" />
       </Picker>
 
-      <Button title="Simular Colisão" onPress={simularColisao} />
+      <Pressable style={styles.button} onPress={simularColisao}>
+        <Text style={styles.textBranco}>Simular Colisão</Text>
+      </Pressable>
       {forcaImpacto && (
         <Text style={styles.result}>Momento linear: {forcaImpacto} kgm/s</Text>
       )}
@@ -163,6 +163,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 16,
+  },
+  button: {
+    marginTop: 15,
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: "black",
+  },
+  textBranco: {
+    color: "white",
   },
   title: {
     fontSize: 18,
