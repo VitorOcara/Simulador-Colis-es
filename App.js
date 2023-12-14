@@ -89,7 +89,7 @@ const ColisaoSimulador = () => {
         placeholder="Massa do Corpo 1 (kg)"
         value={massa1}
         onChangeText={(text) => setMassa1(text)}
-        keyboardType="numeric"
+        inputMode="numeric"
       />
 
       <TextInput
@@ -97,7 +97,7 @@ const ColisaoSimulador = () => {
         placeholder="Massa do corpo 2 (kg)"
         value={massa2}
         onChangeText={(text) => setMassa2(text)}
-        keyboardType="numeric"
+        inputMode="numeric"
       />
 
       <TextInput
@@ -105,21 +105,21 @@ const ColisaoSimulador = () => {
         placeholder="Velocidade Corpo 1 (km/h)"
         value={velocidade1}
         onChangeText={(text) => setVelocidade1(text)}
-        keyboardType="numeric"
+        inputMode="numeric"
       />
       <TextInput
         style={styles.input}
         placeholder="Velocidade Corpo 2 (km/h)"
         value={velocidade2}
         onChangeText={(text) => setVelocidade2(text)}
-        keyboardType="numeric"
+        inputMode="numeric"
       />
       <TextInput
         style={styles.input}
+        inputMode="numeric"
         placeholder="Tempo de colisão em segundos"
         value={tempoC}
         onChangeText={(text) => setTempoC(text)}
-        keyboardType="numeric"
       />
       <Picker
         style={styles.input}
